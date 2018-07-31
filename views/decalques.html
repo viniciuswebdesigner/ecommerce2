@@ -1,0 +1,63 @@
+<section>
+	<div class="container decalques">
+		<div class="row">
+			<div class="col-sm text-center">
+				<h1 class="text-laranja h1 my-5">ESCOLHA SEU MODELO</h1>
+			</div>
+		</div>
+		<div class="row">
+			{loop="$products"}
+			<div class="col-sm-3 mb-4 decalque text-center">
+                <div class="px-3">
+                    <a id="single_image" href="{$value.desphoto}" data-fancybox data-caption="{$value.desproduct}, {$value.vlsubtitle}. {$value.vldescrip}">
+				        <img src="{$value.desphoto}" alt="">
+                    </a>
+                </div>
+				<h5 class="text-laranja h5">{$value.desproduct}</h5>
+				<h6 class="text-laranja h6">{$value.vlsubtitle}</h6>
+			</div>
+			{/loop}
+		</div>
+	</div>
+</section>
+
+<section class="container">	
+	<div class="row text-center my-5">
+		<div class="col-sm">
+			<h3 class="text-laranja h3 mb-2">Não achou o que estava procurando?</h3>
+			<h2 class="text-laranja h2">Peça um decalque exclusivo feito para você!</h2>
+		</div>
+	</div>
+
+</section>
+
+<section class="contato" id="contato">
+    <div class="container mt-5 py-5">
+        <div class="row">
+            <div class="col-sm"><h2>FAÇA JÁ O SEU PEDIDO</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 contato-item mt-2 menor">
+                <a href="https://api.whatsapp.com/send?phone=5561981688653" target="_blanck">
+                    <img src="/res/site/img/whatsapp.svg" alt="Lauro Lustosa Vieira - Decalques Personalizados - Whatsapp"><h3>direto comigo</h3>
+                </a>
+            </div>
+            <div class="col-md-3 contato-item mt-2 menor">
+                <a href="mailto:llvminiaturas@gmail.com" target="_blanck">
+                    <img src="/res/site/img/email.svg" alt="Lauro Lustosa Vieira - Decalques Personalizados - Email"><h3>por e-mail</h3>
+                </a>
+            </div>
+            <div class="col-md-3 contato-item mt-2 igual">
+                <a href="" target="_blanck">
+                    <img src="/res/site/img/mercadolivre.svg" alt="Lauro Lustosa Vieira - Decalques Personalizados - Mercado livre">
+                    <h3>pelo mercado livre</h3>
+                </a>
+            </div>
+            <div class="col-md-3 contato-item mt-2 menor">
+                <a href="https://www.facebook.com/llvminiaturas" target="_blanck">
+                    <img src="/res/site/img/facebook.svg" alt="Lauro Lustosa Vieira - Decalques Personalizados - Facebook"><h3>pelo facebook</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,62 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Alterar imagem
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form" action="/admin/slider/{$slider.idslider}" method="post" enctype="multipart/form-data">
+          <div class="box-body">
+            <div class="form-group col-md-6">
+              <label for="desslider">Nome do decalque</label>
+              <input type="text" class="form-control" id="desslider" name="desslider" placeholder="Digite o nome do decalque" value="{$slider.desslider}">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="file">Foto</label>
+              <input type="file" class="form-control" id="file" name="file" value="{$slider.idslider}">
+              <div class="box box-widget">
+                <div class="box-body" style="max-width: 300px">
+                  <img class="img-responsive" id="image-preview" src="{$slider.desphoto}" alt="Photo">
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<script>
+document.querySelector('#file').addEventListener('change', function(){
+  
+  var file = new FileReader();
+
+  file.onload = function() {
+    
+    document.querySelector('#image-preview').src = file.result;
+
+  }
+
+  file.readAsDataURL(this.files[0]);
+
+});
+</script>

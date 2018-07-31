@@ -1,0 +1,70 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Editar decalque
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form" action="/admin/products/{$product.idproduct}" method="post" enctype="multipart/form-data">
+          <div class="box-body">
+            <div class="form-group col-md-6">
+              <label for="desproduct">Nome do decalque</label>
+              <input type="text" class="form-control" id="desproduct" name="desproduct" placeholder="Digite o nome do decalque" value="{$product.desproduct}">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="vlsubtitle">Subtítulo</label>
+              <input type="text" class="form-control" id="vlsubtitle" name="vlsubtitle" placeholder="Digite o subtítulo do decalque" value="{$product.vlsubtitle}">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="vldescrip">Descrição</label>
+              <input type="text" class="form-control" id="vldescrip" name="vldescrip" placeholder="Digite a descrição do decalque" value="{$product.vldescrip}">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="file">Foto</label>
+              <input type="file" class="form-control" id="file" name="file" value="{$product.idproduct}">
+              <div class="box box-widget">
+                <div class="box-body" style="max-width: 300px">
+                  <img class="img-responsive" id="image-preview" src="{$product.desphoto}" alt="Photo">
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<script>
+document.querySelector('#file').addEventListener('change', function(){
+  
+  var file = new FileReader();
+
+  file.onload = function() {
+    
+    document.querySelector('#image-preview').src = file.result;
+
+  }
+
+  file.readAsDataURL(this.files[0]);
+
+});
+</script>
